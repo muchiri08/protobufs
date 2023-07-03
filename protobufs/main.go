@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/golang/protobuf/proto"
 	pb "gitub.com/muchiri08/protobufs/protofiles"
@@ -22,4 +23,9 @@ func main() {
 	fmt.Println("Original struct loaded from proto file:", p, "\n")
 	fmt.Println("Marshaled proto data: ", body, "\n")
 	fmt.Println("Unmarshaled struct: ", p1)
+
+	//Returning a json object
+	fmt.Println()
+	body, _ = json.Marshal(p)
+	fmt.Println(string(body))
 }
